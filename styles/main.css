@@ -1,0 +1,191 @@
+body {
+	font-family: Helvetica, Arial;
+	padding: 0;
+	margin: 0;
+}
+
+.default-position {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.multi-box {
+	width: 300px;
+}
+
+#page-layout {
+	width: 800px;
+}
+
+#searchPanel,
+#resultPanel {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	display: block;
+	vertical-align: top;
+}
+
+/* Search panel */
+#searchPanel {
+	padding-top: 5px;
+	padding-left: 8px;
+	padding-bottom: 5px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#searchPanel label {
+	margin-top: 8px;
+	font-size: 80%;
+}
+
+#student-list,
+#course-list {
+	max-width: 200px;
+}
+
+#searchBtn {
+	padding-top: 8px;
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+#searchBtn:hover {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+/* Result panel */
+#resultPanel {
+	width: 100%;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#list-counter {
+	padding-left: 5px;
+	padding-top: 20px;
+	font-weight: 600;
+	font-size: 90%;
+}
+
+#resultTable {
+	width: 100%;
+	border-collapse: collapse;
+	-webkit-user-select: none;
+}
+
+.colCourseID,
+.colStudentID,
+.colStudentName,
+.colStudentMark {
+	padding: 5px;
+	padding-top: 25px;
+}
+
+.colCourseID {
+	width: 15%;
+}
+
+.colStudentID {
+	width: 15%;
+}
+
+.colStudentName {
+	width: 40%;
+}
+
+.colStudentMark {
+	width: 15%;
+}
+
+.rowHeader {
+	color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(255, 255, 255, 0);
+	width: 100%;
+	background: none;
+	outline: none;
+	border: none;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: left;
+}
+
+.rowHeader:hover {
+	color: rgba(0, 0, 0, 1);
+}
+
+.rowHeader:active {
+	color: rgba(0, 0, 0, 0.2);
+}
+
+#resultTable td, th {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+#resultTable td {
+	padding-top: 15px;
+	padding-bottom: 10px;
+	height: 100%;
+	vertical-align: top;
+	cursor: context-menu;
+}
+
+.regular,
+.no-result {
+	font-size: 80%;
+}
+
+.no-result {
+	color: rgba(0, 0, 0, 0.5);
+	font-style: italic;
+	text-align: center;
+}
+
+.regular {
+	color: black;
+	margin-left: 12px;
+}
+
+/* Footer */
+#table-footer {
+	text-align: center;
+}
+
+#table-footer span {
+	font-size: 80%;
+	font-weight: 600;
+}
+
+#copyright {
+	color: rgba(0, 0, 0, 0.5);
+	text-align: right;
+	font-size: 60%;
+	padding-right: 5px;
+	padding-bottom: 10px;
+}
+
+#prevBtn,
+#nextBtn {
+	background-color: inherit;
+	border: none;
+	outline: none;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.5);
+	width: 50px;
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+	color: rgba(0, 0, 0, 1);
+	-webkit-transform: scale(1.25, 1.25);
+	-webkit-transition: -webkit-transform 100ms linear;
+}
+
+#prevBtn:active,
+#nextBtn:active {
+	color: rgba(0, 0, 0, 0.2);
+}

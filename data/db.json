@@ -1,0 +1,575 @@
+{
+	"Students" : {
+		"989405" : {
+			"firstName" : "Charley",
+			"lastName" : "Feardorcha"
+		},
+		"601743" : {
+			"firstName" : "Kiyoko",
+			"lastName" : "Geertje"
+		},
+		"255237" : {
+			"firstName" : "Shevaun",
+			"lastName" : "Virginia"
+		},
+		"469521" : {
+			"firstName" : "Nasim",
+			"lastName" : "Nollaig"
+		},
+		"720346" : {
+			"firstName" : "Chernobog",
+			"lastName" : "Geirr"
+		},
+		"363564" : {
+			"firstName" : "Erwin",
+			"lastName" : "Calixta"
+		},
+		"594152" : {
+			"firstName" : "Marinka",
+			"lastName" : "Daria"
+		},
+		"715122" : {
+			"firstName" : "Latisha",
+			"lastName" : "Rashmi"
+		},
+		"203015" : {
+			"firstName" : "Suvi",
+			"lastName" : "Mere"
+		},
+		"694215" : {
+			"firstName" : "Marlon",
+			"lastName" : "Crescens"
+		},
+		"744024" : {
+			"firstName" : "Haruka",
+			"lastName" : "Tania"
+		},
+		"220532" : {
+			"firstName" : "Romana",
+			"lastName" : "Margherita"
+		},
+		"250061" : {
+			"firstName" : "Zoe",
+			"lastName" : "Gaufrid"
+		},
+		"749877" : {
+			"firstName" : "Nuh",
+			"lastName" : "Shad"
+		},
+		"459267" : {
+			"firstName" : "Berkant",
+			"lastName" : "Missy"
+		}
+	},
+	"Courses" : {
+		"LIT-301" : {
+			"cname" : "Cyberpunk Literature: Interdisciplinary Study"
+		},
+		"PSY-412" : {
+			"cname" : "Psychology Of Southern Elbonian"
+		},
+		"LIT-231" : {
+			"cname" : "Literature of Socialism & Activisim"
+		},
+		"MATH-230" : {
+			"cname" : "Linear Algebra"
+		},
+		"COMP-420" : {
+			"cname" : "Algorithm Design"
+		},
+		"MYTH-550" : {
+			"cname" : "Senior Seminar in Urban German Mythology"
+		},
+		"LIT-202" : {
+			"cname" : "Liberal Paganism in Modern Poetry"
+		},
+		"LIT-324" : {
+			"cname" : "Daytime Soap Operas: Interdisciplinary Approach"
+		},
+		"EAST-240" : {
+			"cname" : "Japanese Life: Practice and Cross-Cultural Awareness"
+		}
+	},
+	"Marks" : [
+				{
+			"sid" : 594152,
+			"cid" : "LIT-301",
+			"mark1" : 82,
+			"mark2" : 47
+		},
+		{
+			"sid" : 989405,
+			"cid" : "LIT-301",
+			"mark1" : 60,
+			"mark2" : 82
+		},
+		{
+			"sid" : 220532,
+			"cid" : "LIT-301",
+			"mark1" : 63,
+			"mark2" : 47
+		},
+		{
+			"sid" : 255237,
+			"cid" : "LIT-301",
+			"mark1" : 65,
+			"mark2" : 70
+		},
+		{
+			"sid" : 744024,
+			"cid" : "LIT-301",
+			"mark1" : 61,
+			"mark2" : 92
+		},
+		{
+			"sid" : 694215,
+			"cid" : "LIT-301",
+			"mark1" : 64,
+			"mark2" : 38
+		},
+		{
+			"sid" : 469521,
+			"cid" : "LIT-301",
+			"mark1" : 92,
+			"mark2" : 90
+		},
+		{
+			"sid" : 601743,
+			"cid" : "LIT-301",
+			"mark1" : 87,
+			"mark2" : 42
+		},
+		{
+			"sid" : 715122,
+			"cid" : "LIT-301",
+			"mark1" : 92,
+			"mark2" : 60
+		},
+		{
+			"sid" : 749877,
+			"cid" : "LIT-301",
+			"mark1" : 79,
+			"mark2" : 37
+		},
+		{
+			"sid" : 220532,
+			"cid" : "PSY-412",
+			"mark1" : 53,
+			"mark2" : 47
+		},
+		{
+			"sid" : 694215,
+			"cid" : "PSY-412",
+			"mark1" : 78,
+			"mark2" : 55
+		},
+		{
+			"sid" : 989405,
+			"cid" : "PSY-412",
+			"mark1" : 55,
+			"mark2" : 66
+		},
+		{
+			"sid" : 594152,
+			"cid" : "PSY-412",
+			"mark1" : 97,
+			"mark2" : 55
+		},
+		{
+			"sid" : 469521,
+			"cid" : "PSY-412",
+			"mark1" : 53,
+			"mark2" : 38
+		},
+		{
+			"sid" : 715122,
+			"cid" : "PSY-412",
+			"mark1" : 60,
+			"mark2" : 89
+		},
+		{
+			"sid" : 601743,
+			"cid" : "PSY-412",
+			"mark1" : 61,
+			"mark2" : 72
+		},
+		{
+			"sid" : 749877,
+			"cid" : "PSY-412",
+			"mark1" : 60,
+			"mark2" : 90
+		},
+		{
+			"sid" : 363564,
+			"cid" : "LIT-231",
+			"mark1" : 58,
+			"mark2" : 87
+		},
+		{
+			"sid" : 594152,
+			"cid" : "LIT-231",
+			"mark1" : 41,
+			"mark2" : 60
+		},
+		{
+			"sid" : 749877,
+			"cid" : "LIT-231",
+			"mark1" : 57,
+			"mark2" : 95
+		},
+		{
+			"sid" : 255237,
+			"cid" : "LIT-231",
+			"mark1" : 79,
+			"mark2" : 46
+		},
+		{
+			"sid" : 989405,
+			"cid" : "LIT-231",
+			"mark1" : 85,
+			"mark2" : 81
+		},
+		{
+			"sid" : 250061,
+			"cid" : "LIT-231",
+			"mark1" : 73,
+			"mark2" : 94
+		},
+		{
+			"sid" : 715122,
+			"cid" : "LIT-231",
+			"mark1" : 54,
+			"mark2" : 67
+		},
+		{
+			"sid" : 744024,
+			"cid" : "LIT-231",
+			"mark1" : 51,
+			"mark2" : 64
+		},
+		{
+			"sid" : 694215,
+			"cid" : "LIT-231",
+			"mark1" : 99,
+			"mark2" : 87
+		},
+		{
+			"sid" : 720346,
+			"cid" : "LIT-231",
+			"mark1" : 56,
+			"mark2" : 86
+		},
+		{
+			"sid" : 744024,
+			"cid" : "MATH-230",
+			"mark1" : 49,
+			"mark2" : 57
+		},
+		{
+			"sid" : 363564,
+			"cid" : "MATH-230",
+			"mark1" : 95,
+			"mark2" : 31
+		},
+		{
+			"sid" : 203015,
+			"cid" : "MATH-230",
+			"mark1" : 76,
+			"mark2" : 49
+		},
+		{
+			"sid" : 601743,
+			"cid" : "MATH-230",
+			"mark1" : 98,
+			"mark2" : 84
+		},
+		{
+			"sid" : 749877,
+			"cid" : "MATH-230",
+			"mark1" : 50,
+			"mark2" : 41
+		},
+		{
+			"sid" : 469521,
+			"cid" : "MATH-230",
+			"mark1" : 98,
+			"mark2" : 78
+		},
+		{
+			"sid" : 989405,
+			"cid" : "MATH-230",
+			"mark1" : 53,
+			"mark2" : 30
+		},
+		{
+			"sid" : 715122,
+			"cid" : "MATH-230",
+			"mark1" : 43,
+			"mark2" : 84
+		},
+		{
+			"sid" : 203015,
+			"cid" : "COMP-420",
+			"mark1" : 86,
+			"mark2" : 70
+		},
+		{
+			"sid" : 694215,
+			"cid" : "COMP-420",
+			"mark1" : 84,
+			"mark2" : 86
+		},
+		{
+			"sid" : 363564,
+			"cid" : "COMP-420",
+			"mark1" : 77,
+			"mark2" : 88
+		},
+		{
+			"sid" : 220532,
+			"cid" : "COMP-420",
+			"mark1" : 86,
+			"mark2" : 76
+		},
+		{
+			"sid" : 989405,
+			"cid" : "COMP-420",
+			"mark1" : 77,
+			"mark2" : 70
+		},
+		{
+			"sid" : 715122,
+			"cid" : "COMP-420",
+			"mark1" : 53,
+			"mark2" : 36
+		},
+		{
+			"sid" : 720346,
+			"cid" : "COMP-420",
+			"mark1" : 74,
+			"mark2" : 97
+		},
+		{
+			"sid" : 744024,
+			"cid" : "COMP-420",
+			"mark1" : 52,
+			"mark2" : 34
+		},
+		{
+			"sid" : 601743,
+			"cid" : "MYTH-550",
+			"mark1" : 91,
+			"mark2" : 69
+		},
+		{
+			"sid" : 694215,
+			"cid" : "MYTH-550",
+			"mark1" : 75,
+			"mark2" : 52
+		},
+		{
+			"sid" : 250061,
+			"cid" : "MYTH-550",
+			"mark1" : 84,
+			"mark2" : 52
+		},
+		{
+			"sid" : 744024,
+			"cid" : "MYTH-550",
+			"mark1" : 90,
+			"mark2" : 46
+		},
+		{
+			"sid" : 220532,
+			"cid" : "MYTH-550",
+			"mark1" : 74,
+			"mark2" : 62
+		},
+		{
+			"sid" : 363564,
+			"cid" : "MYTH-550",
+			"mark1" : 65,
+			"mark2" : 50
+		},
+		{
+			"sid" : 594152,
+			"cid" : "MYTH-550",
+			"mark1" : 68,
+			"mark2" : 58
+		},
+		{
+			"sid" : 715122,
+			"cid" : "MYTH-550",
+			"mark1" : 88,
+			"mark2" : 66
+		},
+		{
+			"sid" : 255237,
+			"cid" : "MYTH-550",
+			"mark1" : 58,
+			"mark2" : 50
+		},
+		{
+			"sid" : 203015,
+			"cid" : "MYTH-550",
+			"mark1" : 49,
+			"mark2" : 94
+		},
+		{
+			"sid" : 220532,
+			"cid" : "LIT-202",
+			"mark1" : 85,
+			"mark2" : 49
+		},
+		{
+			"sid" : 363564,
+			"cid" : "LIT-202",
+			"mark1" : 91,
+			"mark2" : 60
+		},
+		{
+			"sid" : 255237,
+			"cid" : "LIT-202",
+			"mark1" : 76,
+			"mark2" : 84
+		},
+		{
+			"sid" : 469521,
+			"cid" : "LIT-202",
+			"mark1" : 56,
+			"mark2" : 69
+		},
+		{
+			"sid" : 744024,
+			"cid" : "LIT-202",
+			"mark1" : 65,
+			"mark2" : 69
+		},
+		{
+			"sid" : 203015,
+			"cid" : "LIT-202",
+			"mark1" : 69,
+			"mark2" : 54
+		},
+		{
+			"sid" : 250061,
+			"cid" : "LIT-202",
+			"mark1" : 72,
+			"mark2" : 92
+		},
+		{
+			"sid" : 715122,
+			"cid" : "LIT-202",
+			"mark1" : 49,
+			"mark2" : 43
+		},
+		{
+			"sid" : 720346,
+			"cid" : "LIT-202",
+			"mark1" : 51,
+			"mark2" : 60
+		},
+		{
+			"sid" : 601743,
+			"cid" : "LIT-202",
+			"mark1" : 77,
+			"mark2" : 49
+		},
+		{
+			"sid" : 255237,
+			"cid" : "LIT-324",
+			"mark1" : 97,
+			"mark2" : 34
+		},
+		{
+			"sid" : 601743,
+			"cid" : "LIT-324",
+			"mark1" : 81,
+			"mark2" : 38
+		},
+		{
+			"sid" : 694215,
+			"cid" : "LIT-324",
+			"mark1" : 87,
+			"mark2" : 45
+		},
+		{
+			"sid" : 749877,
+			"cid" : "LIT-324",
+			"mark1" : 84,
+			"mark2" : 54
+		},
+		{
+			"sid" : 250061,
+			"cid" : "LIT-324",
+			"mark1" : 78,
+			"mark2" : 65
+		},
+		{
+			"sid" : 715122,
+			"cid" : "EAST-240",
+			"mark1" : 55,
+			"mark2" : 30
+		},
+		{
+			"sid" : 250061,
+			"cid" : "EAST-240",
+			"mark1" : 52,
+			"mark2" : 88
+		},
+		{
+			"sid" : 203015,
+			"cid" : "EAST-240",
+			"mark1" : 72,
+			"mark2" : 49
+		},
+		{
+			"sid" : 255237,
+			"cid" : "EAST-240",
+			"mark1" : 72,
+			"mark2" : 90
+		},
+		{
+			"sid" : 220532,
+			"cid" : "EAST-240",
+			"mark1" : 48,
+			"mark2" : 54
+		},
+		{
+			"sid" : 694215,
+			"cid" : "EAST-240",
+			"mark1" : 56,
+			"mark2" : 49
+		},
+		{
+			"sid" : 594152,
+			"cid" : "EAST-240",
+			"mark1" : 80,
+			"mark2" : 80
+		},
+		{
+			"sid" : 601743,
+			"cid" : "EAST-240",
+			"mark1" : 89,
+			"mark2" : 35
+		},
+		{
+			"sid" : 469521,
+			"cid" : "EAST-240",
+			"mark1" : 75,
+			"mark2" : 33
+		},
+		{
+			"sid" : 749877,
+			"cid" : "EAST-240",
+			"mark1" : 79,
+			"mark2" : 49
+		},
+		{
+			"sid" : 989405,
+			"cid" : "EAST-240",
+			"mark1" : 70,
+			"mark2" : 92
+		}
+	]
+}

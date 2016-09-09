@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Student Admission</title>
+		<link rel="stylesheet" type="text/css" href="styles/chosen.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+	</head>
+	<body>
+		<div id="page-layout">
+			<!-- Search panel on the left -->
+			<div id="searchPanel">
+				<div class="default-position">
+					<label for="student-list" class="default-position">Student filter:</label>
+					<select data-placeholder="Select all student(s)" id="student-list" class="chosen-select multi-box default-position" multiple tabindex="2">
+						<option value=""></option>
+						<option value="10101000">Student A</option>
+						<option value="10101000">Student A</option>
+						<option value="10101000">Student A</option>
+						<option value="10101000">Student A</option>
+						<option value="10101000">Student A</option>
+						<option value="10101000">Student A</option>
+						<option value="10101000">Student A</option>
+						<option value="10101000">Student A</option>
+					</select>
+				</div>
+				<div class="default-position">
+					<label for="course-list" class="default-position">Course filter:</label>
+					<select data-placeholder="Select all course(s)" id="course-list" class="chosen-select multi-box default-position" multiple tabindex="2">
+						<option value=""></option>
+						<option value="10101000">Course A</option>
+					</select>
+				</div>
+				<button id="searchBtn" class="default-position">Search</button>
+			</div>
+			
+			<!-- Search result panel on the right -->
+			<div id="resultPanel">
+				<div id="list-counter">
+					0 - 0 of 0
+				</div>
+				<table id="resultTable" class="tablesorter">
+					<thead>
+						<tr>
+							<th class="colCourseID"><button class="rowHeader">Course</button></td>
+							<th class="colStudentID"><button class="rowHeader">ID</button></td>
+							<th class="colStudentName"><button class="rowHeader">First Name</button></td>
+							<th class="colStudentName"><button class="rowHeader">Last Name</button></td>
+							<th class="colStudentMark"><button class="rowHeader">Mark 1</button></td>
+							<th class="colStudentMark"><button class="rowHeader">Mark 2</button></td>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="6">
+								<div id="table-footer">
+									<button id="prevBtn" onclick="prevPage()"><</button>
+									<span id="page-indicator">0 / 0</span>
+									<button id="nextBtn" onclick="nextPage()">></button>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				
+				<!-- Copyright notice -->
+				<div id="copyright">
+					&copy; Copyright 2016 Kasidit Ritthagol
+				</div>
+			</div>
+		</div>
+	
+		<!-- Scripts -->
+		<script src="scripts/jquery-3.1.0.min.js"></script>
+		<script src="scripts/chosen.jquery.min.js"></script>
+		<script src="scripts/chosen.proto.min.js"></script>
+		<script src="scripts/colResizable-1.6/colResizable-1.6.min.js"></script>
+		<script src="data/db.js"></script>
+		<script src="scripts/functions.js"></script>
+		<script src="scripts/init.js"></script>
+	</body>
+</html>
