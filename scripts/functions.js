@@ -37,6 +37,7 @@ function insertRow(cid, sid, fn, ln, m1, m2) {
 				'<td><div class="regular">' + ln + '</div></td>' +
 				'<td><div class="regular">' + m1 + '</div></td>' +
 				'<td><div class="regular">' + m2 + '</div></td>' +
+				'<td><div class="regular">' + ((m1 + m2) / 2) + '</div></td>' +
 			'</tr>';
 }
 
@@ -46,7 +47,7 @@ var maxRow = 10;
 var curPage = 0;
 var currentSortOrder = -1;
 var sortDirection = 1;
-var rowHeaders = [$('#cidHeader'), $('#sidHeader'), $('#fnHeader'), $('#lnHeader'), $('#m1Header'), $('#m2Header')];
+var rowHeaders = [$('#cidHeader'), $('#sidHeader'), $('#fnHeader'), $('#lnHeader'), $('#m1Header'), $('#m2Header'), $('#maHeader')];
 var prevBtn = $('#prevBtn');
 var nextBtn = $('#nextBtn');
 
@@ -112,12 +113,6 @@ function nextPage() {
 	toPage(curPage);
 }
 
-// Search from using search button
-function clickSearch() {
-	curPage = 0;
-	search(0);
-}
-
 // Variables for arrows
 var arrowAry = [];
 var ARROW_ASC = 0;
@@ -133,6 +128,7 @@ function setArrowVisibility(prevSortOrder, sortOrder, sortDirection) {
 		arrowAry.push([$('.sortDirection.col3 .arrowAsc'), $('.sortDirection.col3 .arrowDesc')]);
 		arrowAry.push([$('.sortDirection.col4 .arrowAsc'), $('.sortDirection.col4 .arrowDesc')]);
 		arrowAry.push([$('.sortDirection.col5 .arrowAsc'), $('.sortDirection.col5 .arrowDesc')]);
+		arrowAry.push([$('.sortDirection.col6 .arrowAsc'), $('.sortDirection.col6 .arrowDesc')]);
 	}
 	
 	// Set visibility for old order
@@ -261,8 +257,30 @@ function sortAry(aryToSory, sortOrder) {
 						: compareFn;
 			});			
 			break;
+		case 6:				//sortOrder 6: Course ID > Average > First name
+			aryToSort.sort(function(a, b) {
+				var aFN = data.Students[a.sid].firstName;
+				var bFN = data.Students[b.sid].firstName;
+				var aAvg = (a.mark1 + a.mark2) / 2;
+				var bAvg = (b.mark1 + b.mark2) / 2;
+				
+				var compareCid = (a.cid.localeCompare(b.cid)) * sortDirection;
+				var compareAvg = (aAvg - bAvg) * sortDirection;
+				var compareFn = (aFN.localeCompare(bFN)) * sortDirection;
+				return a.cid != b.cid ? compareCid
+						: aAvg != bAvg ? compareAvg
+						: compareFn;
+			});
+			break;
 		default: break;
 	}
+}
+
+// Search from using search button
+function clickSearch() {
+	curPage = 0;
+	if (currentSortOrder == 0) currentSortOrder = -1;
+	search(0);
 }
 
 /*
@@ -274,6 +292,7 @@ function sortAry(aryToSory, sortOrder) {
 	sortOrder 3: Last name > First name > Course ID
 	sortOrder 4: Course ID > Mark 1 > First name
 	sortOrder 5: Course ID > Mark 2 > First name
+	sortOrder 6: Course ID > Average > First name
  */
 function search(sortOrder) {
 	// initiate

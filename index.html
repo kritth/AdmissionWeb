@@ -7,17 +7,25 @@
 	</head>
 	<body>
 		<div id="page-layout">
+			<!-- Logo on the top -->
+			<div id="pageLogo">
+				<img src="images/logo_mc_web.png" class="default-position">
+				<div id="pageTitle" class="default-position">
+					<span>STUDENT SEARCH</span>
+				</div>
+			</div>
+		
 			<!-- Search panel on the left -->
 			<div id="searchPanel">
 				<div class="default-position">
 					<label for="student-list" class="default-position">Student filter</label>
-					<select data-placeholder="Select all student(s)" id="student-list" class="chosen-select multi-box default-position" multiple tabindex="2">
+					<select data-placeholder="Select student(s)" id="student-list" class="chosen-select multi-box default-position" multiple tabindex="2">
 						<option value=""></option>
 					</select>
 				</div>
 				<div class="default-position">
 					<label for="course-list" class="default-position">Course filter</label>
-					<select data-placeholder="Select all course(s)" id="course-list" class="chosen-select multi-box default-position" multiple tabindex="2">
+					<select data-placeholder="Select course(s)" id="course-list" class="chosen-select multi-box default-position" multiple tabindex="2">
 						<option value=""></option>
 					</select>
 				</div>
@@ -88,13 +96,20 @@
 									<img src="images/desc.gif" class="arrowDesc">
 								</div>
 							</th>
+							<th id="col6Header" class="colMark">
+								<button id="maHeader" class="rowHeader" onclick="search(6)">Average</button>
+								<div class="sortDirection col6">
+									<img src="images/asc.gif" class="arrowAsc">
+									<img src="images/desc.gif" class="arrowDesc">
+								</div>
+							</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 					<tfoot>
 						<tr>
-							<td colspan="6">
+							<td colspan="7">
 								<div id="table-footer">
 									<button id="prevBtn" onclick="prevPage()"><</button>
 									<span id="page-indicator">0 / 0</span>

@@ -1,5 +1,6 @@
 body {
 	font-family: Helvetica, Arial;
+	background-color: rgba(0, 0, 0, 0.1);
 	padding: 0;
 	margin: 0;
 }
@@ -17,12 +18,37 @@ body {
 #page-layout {
 	margin: 0 auto;
 	width: -webkit-fit-content;
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 180, 255, 0.1);
+}
+
+#pageLogo {
+	width: 100%;
+	height: 100px;
+	background-color: white;
+}
+
+#pageLogo img {
+	padding: 20px;
+}
+
+#pageTitle {
+	vertical-align: top;
+	margin-top: 35px;
+	margin-left: 40px;
+	border-bottom: 2px solid rgba(0, 120, 200, 0.2);
+	width: 990px;
+	padding-bottom: 10px;
+}
+
+#pageTitle span {
+	font-size: 150%;
+	font-weight: 600;
+	color: rgba(0, 180, 255, 0.8);
+	letter-spacing: 5px;
 }
 
 #searchPanel,
 #resultPanel {
-	border: 1px solid rgba(0, 0, 0, 0.2);
 	display: inline-block;
 	vertical-align: top;
 }
@@ -34,7 +60,8 @@ body {
 	padding-bottom: 5px;
 	width: 320px;
 	height: auto;
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 180, 255, 0.1);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #searchPanel label {
@@ -45,6 +72,7 @@ body {
 	font-size: 80%;
 	font-weight: 600;
 	width: 300px;
+	letter-spacing: 1px;
 }
 
 #student-list,
@@ -70,8 +98,8 @@ body {
 /* Result panel */
 #resultPanel {
 	width: 900px;
-	padding-left: 4px;
-	padding-right: 4px;
+	padding-left: 20px;
+	padding-right: 20px;
 	margin-left: -5px;
 	background-color: white;
 }
@@ -89,6 +117,7 @@ body {
 	-webkit-user-select: none;
 }
 
+/* Row Header */
 .colID,
 .colName,
 .colMark {
@@ -100,11 +129,11 @@ body {
 }
 
 .colName {
-	width: 40%;
+	width: 20%;
 }
 
 .colMark {
-	width: 15%;
+	width: 10%;
 }
 
 .rowHeader {
@@ -133,7 +162,7 @@ body {
 }
 
 .rowHeaderActive {
-	-webkit-filter: invert(10%);
+	background-color: rgba(0, 180, 255, 0.1);
 }
 
 #resultTable td, th {
@@ -154,6 +183,7 @@ body {
 	cursor: context-menu;
 }
 
+/* For row header arrow */
 .sortDirection {
 	position: absolute;
 	margin-top: -14px;
@@ -186,6 +216,10 @@ body {
 .sortDirection.col4,
 .sortDirection.col5 {
 	margin-left: 55px;
+}
+
+.sortDirection.col6 {
+	margin-left: 60px;
 }
 
 .regular,
