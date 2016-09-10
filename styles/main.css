@@ -15,13 +15,15 @@ body {
 }
 
 #page-layout {
-	width: 800px;
+	margin: 0 auto;
+	width: -webkit-fit-content;
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 #searchPanel,
 #resultPanel {
 	border: 1px solid rgba(0, 0, 0, 0.2);
-	display: block;
+	display: inline-block;
 	vertical-align: top;
 }
 
@@ -30,25 +32,29 @@ body {
 	padding-top: 5px;
 	padding-left: 8px;
 	padding-bottom: 5px;
-	width: 100%;
+	width: 320px;
+	height: auto;
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
 #searchPanel label {
-	margin-top: 8px;
+	margin-bottom: 7px;
+	padding-top: 16px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 	font-size: 80%;
+	font-weight: 600;
+	width: 300px;
 }
 
 #student-list,
 #course-list {
-	max-width: 200px;
+	width: 300px;
 }
 
-#searchBtn {
-	padding-top: 8px;
-	background: none;
-	border: none;
-	outline: none;
+#searchBtn,
+#clearBtn {
+	margin-top: 8px;
 	cursor: pointer;
 }
 
@@ -58,9 +64,11 @@ body {
 
 /* Result panel */
 #resultPanel {
-	width: 100%;
+	width: 900px;
 	padding-left: 4px;
 	padding-right: 4px;
+	margin-left: -5px;
+	background-color: white;
 }
 
 #list-counter {

@@ -6,13 +6,18 @@ var config = {
 	'.chosen-select-width'     : {width:"95%"}
 }
 
-for (var selector in config) {
-	$(selector).chosen(config[selector]);
-}
-
 $(document).ready(function() {
 	$('table').colResizable();
-	search();
+	
+	// Make dropdown
+	populateDropdown();
+	
+	// Initialize dropdown
+	for (var selector in config) {
+		$(selector).chosen(config[selector]);
+	}
+	
+	search(0);
 });
 
 $(window).resize(function(){

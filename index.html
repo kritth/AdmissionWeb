@@ -10,27 +10,21 @@
 			<!-- Search panel on the left -->
 			<div id="searchPanel">
 				<div class="default-position">
-					<label for="student-list" class="default-position">Student filter:</label>
+					<label for="student-list" class="default-position">Student filter</label>
 					<select data-placeholder="Select all student(s)" id="student-list" class="chosen-select multi-box default-position" multiple tabindex="2">
 						<option value=""></option>
-						<option value="10101000">Student A</option>
-						<option value="10101000">Student A</option>
-						<option value="10101000">Student A</option>
-						<option value="10101000">Student A</option>
-						<option value="10101000">Student A</option>
-						<option value="10101000">Student A</option>
-						<option value="10101000">Student A</option>
-						<option value="10101000">Student A</option>
 					</select>
 				</div>
 				<div class="default-position">
-					<label for="course-list" class="default-position">Course filter:</label>
+					<label for="course-list" class="default-position">Course filter</label>
 					<select data-placeholder="Select all course(s)" id="course-list" class="chosen-select multi-box default-position" multiple tabindex="2">
 						<option value=""></option>
-						<option value="10101000">Course A</option>
 					</select>
 				</div>
-				<button id="searchBtn" class="default-position">Search</button>
+				<div style="text-align:right; padding-right: 25px; padding-bottom: 10px; padding-top: 10px;">
+					<button id="searchBtn" class="default-position" onclick="clickSearch()">Search</button>
+					<button id="clearBtn" class="default-position" onclick="location.reload();">Clear</button>
+				</div>
 			</div>
 			
 			<!-- Search result panel on the right -->
@@ -41,12 +35,12 @@
 				<table id="resultTable" class="tablesorter">
 					<thead>
 						<tr>
-							<th class="colCourseID"><button class="rowHeader">Course</button></td>
-							<th class="colStudentID"><button class="rowHeader">ID</button></td>
-							<th class="colStudentName"><button class="rowHeader">First Name</button></td>
-							<th class="colStudentName"><button class="rowHeader">Last Name</button></td>
-							<th class="colStudentMark"><button class="rowHeader">Mark 1</button></td>
-							<th class="colStudentMark"><button class="rowHeader">Mark 2</button></td>
+							<th class="colCourseID"><button class="rowHeader" onclick="search(0)">Course</button></td>
+							<th class="colStudentID"><button class="rowHeader" onclick="search(1)">ID</button></td>
+							<th class="colStudentName"><button class="rowHeader" onclick="search(2)">First Name</button></td>
+							<th class="colStudentName"><button class="rowHeader" onclick="search(3)">Last Name</button></td>
+							<th class="colStudentMark"><button class="rowHeader" onclick="search(4)">Mark 1</button></td>
+							<th class="colStudentMark"><button class="rowHeader" onclick="search(5)">Mark 2</button></td>
 						</tr>
 					</thead>
 					<tbody>
