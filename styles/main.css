@@ -261,6 +261,10 @@ body {
 	color: rgba(0, 0, 0, 0.2);
 	font-style: italic;
 	font-weight: 600;
+	width: -webkit-fit-content;			/* Chrome */
+	width: -moz-fit-content;			/* Fire fox */
+	border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+	cursor: help;
 }
 
 .no-mark:hover .message {

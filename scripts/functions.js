@@ -29,7 +29,8 @@ function resetAllRows() {
 }
 
 // No mark value and message
-var noMark = '<div class="no-mark">None<div class="message">Please contact the instructor for more information.</div></div>';
+var noMarkMsg = 'Please contact the instructor for more information.';
+var noMark = '<div class="no-mark">None<div class="message">' + noMarkMsg + '</div></div>';
 
 // Insert data into row
 function insertRow(cid, sid, fn, ln, m1, m2) {
