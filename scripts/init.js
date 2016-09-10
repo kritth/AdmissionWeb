@@ -19,7 +19,3 @@ $(document).ready(function() {
 	
 	search(0);
 });
-
-$(window).resize(function(){
-	location.reload();
-});

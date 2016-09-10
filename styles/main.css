@@ -1,6 +1,9 @@
 body {
 	font-family: Helvetica, Arial;
-	background-color: rgba(0, 0, 0, 0.1);
+	background: url('../images/light-blue-halftone-pattern.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	padding: 0;
 	margin: 0;
 }
@@ -17,8 +20,10 @@ body {
 
 #page-layout {
 	margin: 0 auto;
-	width: -webkit-fit-content;
-	background-color: rgba(0, 180, 255, 0.1);
+	width: -webkit-fit-content;			/* Chrome */
+	width: -moz-fit-content;			/* Fire fox */
+	background-color: rgb(230, 247, 255);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #pageLogo {
@@ -252,6 +257,7 @@ body {
 	color: rgba(0, 0, 0, 0.5);
 	text-align: right;
 	font-size: 60%;
+	padding-top: 5px;
 	padding-right: 5px;
 	padding-bottom: 20px;
 }

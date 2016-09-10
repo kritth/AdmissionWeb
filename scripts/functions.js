@@ -21,7 +21,7 @@ function populateDropdown() {
 }
 
 // Search did not match any result
-var noResult = '<tr><td colspan="6"><div class="no-result">No result matching your search</div></td></tr>';
+var noResult = '<tr><td colspan="7"><div class="no-result">No result matching your search</div></td></tr>';
 
 // Remove all rows from table
 function resetAllRows() {
