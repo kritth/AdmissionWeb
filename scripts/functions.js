@@ -44,6 +44,9 @@ function insertRow(cid, sid, fn, ln, m1, m2) {
 var rows;
 var maxRow = 10;
 var curPage = 0;
+var currentSortOrder = -1;
+var sortDirection = 1;
+var rowHeaders = [$('#cidHeader'), $('#sidHeader'), $('#fnHeader'), $('#lnHeader'), $('#m1Header'), $('#m2Header')];
 var prevBtn = $('#prevBtn');
 var nextBtn = $('#nextBtn');
 
@@ -115,6 +118,153 @@ function clickSearch() {
 	search(0);
 }
 
+// Variables for arrows
+var arrowAry = [];
+var ARROW_ASC = 0;
+var ARROW_DESC = 1;
+
+// Set arrow visiblity base on order and direction
+function setArrowVisibility(prevSortOrder, sortOrder, sortDirection) {
+	// Initialize array
+	if (arrowAry.length == 0) {
+		arrowAry.push([$('.sortDirection.col0 .arrowAsc'), $('.sortDirection.col0 .arrowDesc')]);
+		arrowAry.push([$('.sortDirection.col1 .arrowAsc'), $('.sortDirection.col1 .arrowDesc')]);
+		arrowAry.push([$('.sortDirection.col2 .arrowAsc'), $('.sortDirection.col2 .arrowDesc')]);
+		arrowAry.push([$('.sortDirection.col3 .arrowAsc'), $('.sortDirection.col3 .arrowDesc')]);
+		arrowAry.push([$('.sortDirection.col4 .arrowAsc'), $('.sortDirection.col4 .arrowDesc')]);
+		arrowAry.push([$('.sortDirection.col5 .arrowAsc'), $('.sortDirection.col5 .arrowDesc')]);
+	}
+	
+	// Set visibility for old order
+	if (prevSortOrder != -1) {
+		arrowAry[prevSortOrder][ARROW_ASC].css('visibility', 'hidden');
+		arrowAry[prevSortOrder][ARROW_DESC].css('visibility', 'hidden');
+	}
+	
+	// Set visibility for new order
+	if (sortOrder != -1) {
+		if (sortDirection < 0) {
+			arrowAry[sortOrder][ARROW_ASC].css('visibility', 'visible');
+		} else {
+			arrowAry[sortOrder][ARROW_DESC].css('visibility', 'visible');
+		}
+	}
+}
+
+// Switching header style base on selection
+function switchHeader(sortOrder) {
+	var prevSortOrder = currentSortOrder;
+	
+	if (currentSortOrder == sortOrder) {
+		sortDirection *= -1;
+	} else {
+		// Remove rowHeaderActive from old sort order 
+		if (currentSortOrder != -1) {
+			rowHeaders[currentSortOrder].removeClass('rowHeaderActive');
+		}
+		
+		// Add rowHeaderActive to new sort order
+		rowHeaders[sortOrder].addClass('rowHeaderActive');
+		
+		// Update order
+		currentSortOrder = sortOrder;
+		sortDirection = 1;
+	}
+	
+	// Set arrow visibility
+	setArrowVisibility(prevSortOrder, sortOrder, sortDirection);
+}
+
+/*
+	Sort the given array
+	Currently, all data will be sorted at run-time which is not ideal situation for large number of rows.
+	To be able to do this more efficiently, need SQL query.
+*/
+function sortAry(aryToSory, sortOrder) {
+	switch(sortOrder) {
+		case 0:				// sortOrder 0: Course ID > First name > Last name
+			aryToSort.sort(function(a, b) {
+				var aFN = data.Students[a.sid].firstName;
+				var aLN = data.Students[a.sid].lastName;
+				var bFN = data.Students[b.sid].firstName;
+				var bLN = data.Students[b.sid].lastName;
+
+				var compareFn = (aFN.localeCompare(bFN)) * sortDirection;
+				var compareLn = (aLN.localeCompare(bLN)) * sortDirection;				
+				var compareCid = (a.cid.localeCompare(b.cid)) * sortDirection;				
+				return a.cid != b.cid ?	compareCid
+						: aFN != bFN ? compareFn
+						: compareLn;
+			});
+			break;
+		case 1:				// sortOrder 1: Student ID > Course ID
+			aryToSort.sort(function(a, b) {
+				var compareSid = (a.sid - b.sid) * sortDirection;
+				var compareCid = (a.cid.localeCompare(b.cid)) * sortDirection;
+				return a.sid != b.sid ? compareSid
+						: compareCid;
+			});
+			break;
+		case 2:				// sortOrder 2: First name > Last name > Course ID
+			aryToSort.sort(function(a, b) {
+				var aFN = data.Students[a.sid].firstName;
+				var aLN = data.Students[a.sid].lastName;
+				var bFN = data.Students[b.sid].firstName;
+				var bLN = data.Students[b.sid].lastName;
+				
+				var compareFn = (aFN.localeCompare(bFN)) * sortDirection;
+				var compareLn = (aLN.localeCompare(bLN)) * sortDirection;
+				var compareCid = (a.cid.localeCompare(b.cid)) * sortDirection;
+				return aFN != bFN ? compareFn
+						: aLN != bLN ? compareLn
+						: compareCid;
+			});
+			break;
+		case 3:				// sortOrder 3: Last name > First name > Course ID
+			aryToSort.sort(function(a, b) {
+				var aFN = data.Students[a.sid].firstName;
+				var aLN = data.Students[a.sid].lastName;
+				var bFN = data.Students[b.sid].firstName;
+				var bLN = data.Students[b.sid].lastName;
+				
+				var compareFn = (aFN.localeCompare(bFN)) * sortDirection;
+				var compareLn = (aLN.localeCompare(bLN)) * sortDirection;
+				var compareCid = (a.cid.localeCompare(b.cid)) * sortDirection;
+				return aLN != bLN ? compareLn
+						: aFN != bFN ? compareFn
+						: compareCid;
+			});
+			break;
+		case 4:				//sortOrder 4: Course ID > Mark 1 > First name
+			aryToSort.sort(function(a, b) {
+				var aFN = data.Students[a.sid].firstName;
+				var bFN = data.Students[b.sid].firstName;
+				
+				var compareCid = (a.cid.localeCompare(b.cid)) * sortDirection;
+				var compareMark1 = (a.mark1 - b.mark1) * sortDirection;
+				var compareFn = (aFN.localeCompare(bFN)) * sortDirection;
+				return a.cid != b.cid ? compareCid
+						: a.mark1 != b.mark1 ? compareMark1
+						: compareFn;
+			});			
+			break;
+		case 5:				//sortOrder 5: Course ID > Mark 2 > First name
+			aryToSort.sort(function(a, b) {
+				var aFN = data.Students[a.sid].firstName;
+				var bFN = data.Students[b.sid].firstName;
+				
+				var compareCid = (a.cid.localeCompare(b.cid)) * sortDirection;
+				var compareMark2 = (a.mark2 - b.mark2) * sortDirection;
+				var compareFn = (aFN.localeCompare(bFN)) * sortDirection;
+				return a.cid != b.cid ? compareCid
+						: a.mark2 != b.mark2 ? compareMark2
+						: compareFn;
+			});			
+			break;
+		default: break;
+	}
+}
+
 /*
 	Search function
 	sortOrder -1: order based on entry added
@@ -148,82 +298,14 @@ function search(sortOrder) {
 		}
 	}
 	
+	// Switch row number
+	maxRow = parseInt($('#display-list').val());
+	
+	// Switch Header
+	switchHeader(sortOrder);
+	
 	// Sort
-	switch(sortOrder) {
-		case 0:				// sortOrder 0: Course ID > Student ID
-			aryToSort.sort(function(a, b) {
-				var compareSid = a.sid - b.sid;
-				var compareCid = a.cid.localeCompare(b.cid);					
-				return a.cid != b.cid ?	compareCid
-						: compareSid;
-			});
-			break;
-		case 1:				// sortOrder 1: Student ID > Course ID
-			aryToSort.sort(function(a, b) {
-				var compareSid = a.sid - b.sid;
-				var compareCid = a.cid.localeCompare(b.cid);
-				return a.sid != b.sid ? compareSid
-						: compareCid;
-			});
-			break;
-		case 2:				// sortOrder 2: First name > Last name > Course ID
-			aryToSort.sort(function(a, b) {
-				var aFN = data.Students[a.sid].firstName;
-				var aLN = data.Students[a.sid].lastName;
-				var bFN = data.Students[b.sid].firstName;
-				var bLN = data.Students[b.sid].lastName;
-				
-				var compareFn = aFN.localeCompare(bFN);
-				var compareLn = aLN.localeCompare(bLN);
-				var compareCid = a.cid.localeCompare(b.cid);
-				return aFN != bFN ? compareFn
-						: aLN != bLN ? compareLn
-						: compareCid;
-			});
-			break;
-		case 3:				// sortOrder 3: Last name > First name > Course ID
-			aryToSort.sort(function(a, b) {
-				var aFN = data.Students[a.sid].firstName;
-				var aLN = data.Students[a.sid].lastName;
-				var bFN = data.Students[b.sid].firstName;
-				var bLN = data.Students[b.sid].lastName;
-				
-				var compareFn = aFN.localeCompare(bFN);
-				var compareLn = aLN.localeCompare(bLN);
-				var compareCid = a.cid.localeCompare(b.cid);
-				return aLN != bLN ? compareLn
-						: aFN != bFN ? compareFn
-						: compareCid;
-			});
-			break;
-		case 4:				//sortOrder 4: Course ID > Mark 1 > First name
-			aryToSort.sort(function(a, b) {
-				var aFN = data.Students[a.sid].firstName;
-				var bFN = data.Students[b.sid].firstName;
-				
-				var compareCid = a.cid.localeCompare(b.cid);
-				var compareMark1 = a.mark1 - b.mark1;
-				var compareFn = aFN.localeCompare(bFN);
-				return a.cid != b.cid ? compareCid
-						: a.mark1 != b.mark1 ? compareMark1
-						: compareFn;
-			});			
-			break;
-		case 5:				//sortOrder 5: Course ID > Mark 2 > First name
-			aryToSort.sort(function(a, b) {
-				var aFN = data.Students[a.sid].firstName;
-				var bFN = data.Students[b.sid].firstName;
-				
-				var compareCid = a.cid.localeCompare(b.cid);
-				var compareMark2 = a.mark2 - b.mark2;
-				var compareFn = aFN.localeCompare(bFN);
-				return a.cid != b.cid ? compareCid
-						: a.mark2 != b.mark2 ? compareMark2
-						: compareFn;
-			});			
-			break;
-		default: break;
-	}
+	sortAry(aryToSort, sortOrder);
 	
 	// Push to row
 	var i;

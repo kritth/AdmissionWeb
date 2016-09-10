@@ -48,8 +48,13 @@ body {
 }
 
 #student-list,
-#course-list {
+#course-list,
+#display-list {
 	width: 300px;
+}
+
+#display-list {
+	height: 25px;
 }
 
 #searchBtn,
@@ -84,40 +89,39 @@ body {
 	-webkit-user-select: none;
 }
 
-.colCourseID,
-.colStudentID,
-.colStudentName,
-.colStudentMark {
-	padding: 5px;
-	padding-top: 25px;
+.colID,
+.colName,
+.colMark {
+	padding: 0;
 }
 
-.colCourseID {
+.colID {
 	width: 15%;
 }
 
-.colStudentID {
-	width: 15%;
-}
-
-.colStudentName {
+.colName {
 	width: 40%;
 }
 
-.colStudentMark {
+.colMark {
 	width: 15%;
 }
 
 .rowHeader {
-	color: rgba(0, 0, 0, 0.5);
-	background-color: rgba(255, 255, 255, 0);
-	width: 100%;
 	background: none;
 	outline: none;
 	border: none;
+	color: rgba(0, 0, 0, 0.5);
+	background-color: rgb(255, 255, 255);
+	width: 100%;
 	font-weight: 600;
 	cursor: pointer;
 	text-align: left;
+	margin-top: 25px;
+	padding: 5px;
+	padding-top: 10px;
+	padding-left: 10px;
+	z-index: 1;
 }
 
 .rowHeader:hover {
@@ -128,10 +132,18 @@ body {
 	color: rgba(0, 0, 0, 0.2);
 }
 
+.rowHeaderActive {
+	-webkit-filter: invert(10%);
+}
+
 #resultTable td, th {
 	padding-left: 5px;
 	padding-right: 5px;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+#resultTable th {
+	overflow: hidden;
 }
 
 #resultTable td {
@@ -140,6 +152,40 @@ body {
 	height: 100%;
 	vertical-align: top;
 	cursor: context-menu;
+}
+
+.sortDirection {
+	position: absolute;
+	margin-top: -14px;
+	z-index: 2;
+}
+
+.sortDirection img {
+	position: absolute;
+	height: auto;
+	width: 20px;
+	visibility: hidden;
+}
+
+.sortDirection.col0 {
+	margin-left: 60px;
+}
+
+.sortDirection.col1 {
+	margin-left: 30px;
+}
+
+.sortDirection.col2 {
+	margin-left: 80px;
+}
+
+.sortDirection.col3 {
+	margin-left: 80px;
+}
+
+.sortDirection.col4,
+.sortDirection.col5 {
+	margin-left: 55px;
 }
 
 .regular,
@@ -173,7 +219,7 @@ body {
 	text-align: right;
 	font-size: 60%;
 	padding-right: 5px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 #prevBtn,

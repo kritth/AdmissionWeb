@@ -21,6 +21,17 @@
 						<option value=""></option>
 					</select>
 				</div>
+				<div class="default-position">
+					<label for="display-list" class="default-position">Display</label>
+					<select id="display-list">
+						<option value="5">5 rows per page</option>
+						<option value="10" selected>10 rows per page</option>
+						<option value="15">15 rows per page</option>
+						<option value="20">20 rows per page</option>
+						<option value="25">25 rows per page</option>
+						<option value="30">30 rows per page</option>
+					</select>
+				</div>
 				<div style="text-align:right; padding-right: 25px; padding-bottom: 10px; padding-top: 10px;">
 					<button id="searchBtn" class="default-position" onclick="clickSearch()">Search</button>
 					<button id="clearBtn" class="default-position" onclick="location.reload();">Clear</button>
@@ -35,12 +46,48 @@
 				<table id="resultTable" class="tablesorter">
 					<thead>
 						<tr>
-							<th class="colCourseID"><button class="rowHeader" onclick="search(0)">Course</button></td>
-							<th class="colStudentID"><button class="rowHeader" onclick="search(1)">ID</button></td>
-							<th class="colStudentName"><button class="rowHeader" onclick="search(2)">First Name</button></td>
-							<th class="colStudentName"><button class="rowHeader" onclick="search(3)">Last Name</button></td>
-							<th class="colStudentMark"><button class="rowHeader" onclick="search(4)">Mark 1</button></td>
-							<th class="colStudentMark"><button class="rowHeader" onclick="search(5)">Mark 2</button></td>
+							<th class="colID">
+								<button id="cidHeader" class="rowHeader" onclick="search(0)">Course</button>
+								<div class="sortDirection col0">
+									<img src="images/asc.gif" class="arrowAsc">
+									<img src="images/desc.gif" class="arrowDesc">
+								</div>
+							</th>
+							<th id="col1Header" class="colID">
+								<button id="sidHeader" class="rowHeader" onclick="search(1)">ID</button>
+								<div class="sortDirection col1">
+									<img src="images/asc.gif" class="arrowAsc">
+									<img src="images/desc.gif" class="arrowDesc">
+								</div>
+							</th>
+							<th id="col2Header" class="colName">
+								<button id="fnHeader" class="rowHeader" onclick="search(2)">First Name</button>
+								<div class="sortDirection col2">
+									<img src="images/asc.gif" class="arrowAsc">
+									<img src="images/desc.gif" class="arrowDesc">
+								</div>
+							</th>
+							<th id="col3Header" class="colName">
+								<button id="lnHeader" class="rowHeader" onclick="search(3)">Last Name</button>
+								<div class="sortDirection col3">
+									<img src="images/asc.gif" class="arrowAsc">
+									<img src="images/desc.gif" class="arrowDesc">
+								</div>
+							</th>
+							<th id="col4Header" class="colMark">
+								<button id="m1Header" class="rowHeader" onclick="search(4)">Mark 1</button>
+								<div class="sortDirection col4">
+									<img src="images/asc.gif" class="arrowAsc">
+									<img src="images/desc.gif" class="arrowDesc">
+								</div>
+							</th>
+							<th id="col5Header" class="colMark">
+								<button id="m2Header" class="rowHeader" onclick="search(5)">Mark 2</button>
+								<div class="sortDirection col5">
+									<img src="images/asc.gif" class="arrowAsc">
+									<img src="images/desc.gif" class="arrowDesc">
+								</div>
+							</th>
 						</tr>
 					</thead>
 					<tbody>
