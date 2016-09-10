@@ -28,16 +28,37 @@ function resetAllRows() {
 	$('#resultTable > tbody').html("");
 }
 
+// No mark value and message
+var noMark = '<div class="no-mark">None<div class="message">Please contact the instructor for more information.</div></div>';
+
 // Insert data into row
 function insertRow(cid, sid, fn, ln, m1, m2) {
+	var mark1 = m1;
+	var mark2 = m2;
+	var avg;
+	if (mark1 < 0 && mark2 < 0) {
+		mark1 = noMark;
+		mark2 = noMark;
+		avg = noMark;
+	} else {
+		if (mark1 < 0) {
+			mark1 = noMark;
+			m1 = m2;
+		}
+		if (mark2 < 0) {
+			mark2 = noMark;
+			m2 = m1;
+		}
+		avg = ((m1 + m2) / 2);
+	}
 	return '<tr>' +
 				'<td><div class="regular">' + cid + '</div></td>' +
 				'<td><div class="regular">' + sid + '</div></td>' +
 				'<td><div class="regular">' + fn + '</div></td>' +
 				'<td><div class="regular">' + ln + '</div></td>' +
-				'<td><div class="regular">' + m1 + '</div></td>' +
-				'<td><div class="regular">' + m2 + '</div></td>' +
-				'<td><div class="regular">' + ((m1 + m2) / 2) + '</div></td>' +
+				'<td><div class="regular">' + mark1 + '</div></td>' +
+				'<td><div class="regular">' + mark2 + '</div></td>' +
+				'<td><div class="regular">' + avg + '</div></td>' +
 			'</tr>';
 }
 

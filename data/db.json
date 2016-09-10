@@ -376,19 +376,19 @@
 		{
 			"sid" : 744024,
 			"cid" : "MYTH-550",
-			"mark1" : 90,
-			"mark2" : 46
+			"mark1" : -1,
+			"mark2" : -1
 		},
 		{
 			"sid" : 220532,
 			"cid" : "MYTH-550",
 			"mark1" : 74,
-			"mark2" : 62
+			"mark2" : -1
 		},
 		{
 			"sid" : 363564,
 			"cid" : "MYTH-550",
-			"mark1" : 65,
+			"mark1" : -1,
 			"mark2" : 50
 		},
 		{
